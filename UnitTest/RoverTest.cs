@@ -68,5 +68,24 @@ namespace MarsRovers.UnitTest
             Assert.AreEqual("W", rover.GetDirection());
             Assert.AreEqual(new Point(2, 6), rover.GetPosition());
         }
+
+        [Test]
+        public void RoverShouldTurnLeft()
+        {
+            Rover rover = new Rover();
+            rover.SetDirection("W");
+            rover.Turn("Left");
+            Assert.AreEqual("S", rover.GetDirection());
+
+        }
+
+        [Test]
+        public void RoverShouldTurnRight()
+        {
+            Rover rover = new Rover();
+            rover.SetDirection("W");
+            rover.Turn("Right");
+            Assert.AreEqual("N", rover.GetDirection());
+        }
     }
 }
